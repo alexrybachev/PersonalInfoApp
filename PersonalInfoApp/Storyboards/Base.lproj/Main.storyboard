@@ -30,7 +30,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WnE-YI-A11">
                                                 <rect key="frame" x="0.0" y="74" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -100,10 +100,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVv-db-mTi">
-                                <rect key="frame" x="138" y="689" width="138" height="44"/>
+                                <rect key="frame" x="87" y="689" width="240" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <segue destination="Dhk-ZR-2qH" kind="unwind" unwindAction="unwindFor:" id="Qgl-oM-Rux"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dx-qB-gFH">
                                 <rect key="frame" x="20" y="164" width="374" height="31.5"/>
@@ -122,12 +125,16 @@
                             <constraint firstItem="CXh-Kj-ykL" firstAttribute="bottom" secondItem="cVv-db-mTi" secondAttribute="bottom" constant="80" id="P3L-os-Bkz"/>
                             <constraint firstItem="lRL-LW-p7t" firstAttribute="centerX" secondItem="6j6-sh-riI" secondAttribute="centerX" id="SVS-be-kv2"/>
                             <constraint firstItem="9Dx-qB-gFH" firstAttribute="leading" secondItem="CXh-Kj-ykL" secondAttribute="leading" constant="20" id="aZM-we-DkT"/>
-                            <constraint firstItem="cVv-db-mTi" firstAttribute="width" secondItem="6j6-sh-riI" secondAttribute="height" multiplier="69:448" id="ygg-97-Ady"/>
+                            <constraint firstItem="cVv-db-mTi" firstAttribute="width" secondItem="6j6-sh-riI" secondAttribute="height" multiplier="120:448" id="ygg-97-Ady"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="BMI-Op-hOa"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="9Dx-qB-gFH" id="I7B-Fi-etO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeA-HY-zmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Dhk-ZR-2qH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="564" y="899"/>
         </scene>

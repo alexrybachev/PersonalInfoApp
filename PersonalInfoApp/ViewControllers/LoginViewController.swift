@@ -22,6 +22,17 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        welcomeVC.userName = userNameTF.text
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTF.text = nil
+        passwordTF.text = nil
+    }
+    
     @IBAction func logInButtonPressed() {
         guard userNameTF.text == user, passwordTF.text == password else {
             showAlert(
@@ -31,7 +42,7 @@ class LoginViewController: UIViewController {
             )
             return
         }
-            
+        performSegue(withIdentifier: "openWelcomeVC", sender: nil)
     }
     
     

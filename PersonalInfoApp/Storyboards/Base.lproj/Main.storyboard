@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -91,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="YyU-57-Uql">
             <objects>
                 <viewController id="nMV-Io-Jfv" customClass="WelcomeViewController" customModule="PersonalInfoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -134,7 +135,8 @@
                             <constraint firstItem="cVv-db-mTi" firstAttribute="width" secondItem="6j6-sh-riI" secondAttribute="height" multiplier="120:448" id="ygg-97-Ady"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="BMI-Op-hOa"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="person" catalog="system" id="uek-aR-LZk"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="9Dx-qB-gFH" id="I7B-Fi-etO"/>
                     </connections>
@@ -233,7 +235,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="37H-jq-K3S"/>
                     <connections>
-                        <outlet property="userPhotto" destination="t6O-Ph-R4R" id="EtP-pJ-LAF"/>
+                        <outlet property="userPhoto" destination="t6O-Ph-R4R" id="EtP-pJ-LAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0n3-cy-41k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -246,23 +248,26 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8b8-PR-7u4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J4g-Sl-iX8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nMV-Io-Jfv" kind="relationship" relationship="viewControllers" id="1ki-uI-Edp"/>
-                        <segue destination="gxf-Qp-xGB" kind="relationship" relationship="viewControllers" id="bgo-y0-3v2"/>
+                        <segue destination="nMV-Io-Jfv" kind="relationship" relationship="viewControllers" id="Cwh-ln-yUb"/>
+                        <segue destination="gxf-Qp-xGB" kind="relationship" relationship="viewControllers" id="91H-WG-vgW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1e-F8-sva" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="954" y="138"/>
         </scene>
-        <!--Item-->
+        <!--User-->
         <scene sceneID="Z02-4y-CuG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gxf-Qp-xGB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ydh-ej-aKz"/>
+                    <tabBarItem key="tabBarItem" title="User" id="ydh-ej-aKz">
+                        <imageReference key="image" image="person.fill" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vEp-Qw-chB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -279,6 +284,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

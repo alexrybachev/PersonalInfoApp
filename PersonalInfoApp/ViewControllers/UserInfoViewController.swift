@@ -16,17 +16,20 @@ class UserInfoViewController: UIViewController {
     @IBOutlet var infoAboutUser: UILabel!
     
     // MARK: - Variable Properties
-    var nameUser: String!
-    var ageUser: Int!
-    var cityUser: String!
-    var aboutUser: String!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = user.person.fullName
         
-        userName.text = "My name is \(nameUser ?? "")."
-        userAge.text = "I'm \(ageUser ?? 0) years old."
-        userCity.text = "I live in \(cityUser ?? "")."
-        infoAboutUser.text = "About me: \(aboutUser ?? "")"
+        userName.text = "My name is \(user.person.fullName)."
+        userAge.text = "I'm \(user.person.age) years old."
+        userCity.text = "I live in \(user.person.city)."
+        infoAboutUser.text = "About me: \(user.person.description)"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let imageVC = segue.destination as? ImageViewController else { return }
+        imageVC.userImage = user
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     // MARK: - Outlets
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
@@ -16,11 +16,6 @@ class LoginViewController: UIViewController {
     // MARK: - Private Properties
     private let user = "User"
     private let password = "Password"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,9 +46,6 @@ class LoginViewController: UIViewController {
             ? showAlert(title: "Oops!", message: "Your login is User 😎")
             : showAlert(title: "Oops!", message: "Your password is Password 😎")
     }
-    
-
-
 }
 
 // MARK: - AlertController
@@ -65,6 +57,23 @@ extension LoginViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+}
+
+// MARK: - Keyboard
+extension LoginViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTF {
+            passwordTF.becomeFirstResponder()
+        } else {
+            logInButtonPressed()
+        }
+        return true
     }
 }
 

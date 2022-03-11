@@ -9,21 +9,24 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet var userName: UILabel!
+    @IBOutlet var userAge: UILabel!
+    @IBOutlet var userCity: UILabel!
+    @IBOutlet var infoAboutUser: UILabel!
+    
+    // MARK: - Variable Properties
+    var nameUser: String!
+    var ageUser: Int!
+    var cityUser: String!
+    var aboutUser: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        userName.text = "My name is \(nameUser ?? "")."
+        userAge.text = "I'm \(ageUser ?? 0) years old."
+        userCity.text = "I live in \(cityUser ?? "")."
+        infoAboutUser.text = "About me: \(aboutUser ?? "")"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

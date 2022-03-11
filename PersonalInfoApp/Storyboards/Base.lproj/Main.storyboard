@@ -197,6 +197,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="infoAboutUser" destination="f5I-Ld-Eye" id="WkK-RR-55U"/>
+                        <outlet property="userAge" destination="h7j-tb-GRU" id="8bS-1B-AyE"/>
+                        <outlet property="userCity" destination="92I-xP-p0f" id="b7R-oO-rae"/>
+                        <outlet property="userName" destination="Fda-nn-GG4" id="Ldp-Wq-V2K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBU-Ys-nK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,6 +232,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="37H-jq-K3S"/>
+                    <connections>
+                        <outlet property="userPhotto" destination="t6O-Ph-R4R" id="EtP-pJ-LAF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0n3-cy-41k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

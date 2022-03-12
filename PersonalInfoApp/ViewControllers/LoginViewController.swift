@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTF: UITextField!
     
     // MARK: - Properties
-    private let user = User.getInfoUser()
+    private let user = User.getUserInfo()
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,9 +29,6 @@ class LoginViewController: UIViewController {
                 infoUser.user = user
             }
         }
-        
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.userName = userNameTF.text
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -50,7 +47,6 @@ class LoginViewController: UIViewController {
         }
         performSegue(withIdentifier: "openWelcomeVC", sender: nil)
     }
-    
     
     @IBAction func showAuthorizationInfo(_ sender: UIButton) {
         sender.tag == 0

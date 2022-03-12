@@ -16,7 +16,11 @@ class ImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         userPhoto.image = UIImage(named: userImage.person.image)
+        userPhoto.contentMode = .scaleAspectFill
+    }
+    
+    override func viewDidLayoutSubviews() {
+        userPhoto.layer.cornerRadius = userPhoto.frame.width / 2
     }
 }

@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTF: UITextField!
     
     // MARK: - Properties
-    let user = User.getInfoUser()
+    private let user = User.getInfoUser()
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
